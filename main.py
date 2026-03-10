@@ -1,7 +1,6 @@
-from Registroventas import registro_ventas
-from Registroventas import mostrar_resumen
+from Registroventas import registro_ventas , mostrar_resumen
 
-print("Bienvenido al sistema de registro de ventas")
+print("Bienvenido al sistema de registro de ventas ")
 continuar = "si"
 recaudo_diario = 0
 ventas_dia = []

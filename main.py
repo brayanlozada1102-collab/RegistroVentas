@@ -1,6 +1,6 @@
 from Registroventas import registro_ventas , mostrar_resumen
 
-print("Bienvenido al sistema de registro de ventas ")
+print("Bienvenido al sistema de registro de ventas \n -----------------------")
 continuar = "si"
 recaudo_diario = 0
 ventas_dia = []
@@ -13,9 +13,9 @@ while continuar == "si":
  registro_ventas(nombre_producto,cantidad,valor_unitario,ventas_dia)
  
  recaudo_diario = recaudo_diario + (cantidad*valor_unitario)
- continuar = input("desea continuar registrando ventas? si/no: ")
+ continuar = input("desea continuar registrando ventas? si/no: ").lower()
 
 mostrar_resumen(ventas_dia)
     
-print(recaudo_diario)
+print(f"El total recaudado en el dia fue ${recaudo_diario}")
         

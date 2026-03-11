@@ -1,2 +1,22 @@
-# RegistroVentas
-As a store administrator, I want to record the sales made during the day using a script, to get a clear summary of the products sold, quantities, and the total collected at the end of the day.
+# Sales Registration System
+
+A simple Python-based tool to record daily product sales, calculate total revenue, and display a transaction summary.
+
+## Features
+
+- Dynamic product data entry (name, quantity, and unit price).
+- Input validation to handle data entry errors.
+- Automated total revenue calculation.
+- Detailed daily summary report.
+
+## Project Structure
+
+- `main.py`: The core execution logic and user interface loop.
+- `salesregister.py`: Contains the logic for data storage and summary formatting.
+
+## Usage
+
+Run the main script using the terminal:
+
+```bash
+python main.py

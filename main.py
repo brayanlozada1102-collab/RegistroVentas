@@ -1,21 +1,37 @@
-from Registroventas import registro_ventas , mostrar_resumen
+# Importing functions to be used
+from salesregister import sales_register , show_summary
 
-print("Bienvenido al sistema de registro de ventas \n -----------------------")
-continuar = "si"
-recaudo_diario = 0
-ventas_dia = []
-while continuar == "si":
+#Initial configuration and system startup
+print("Welcome to the sales registration system \n -----------------------")
+start = True
+daily_revenue = 0
+daily_sales = []
 
- nombre_producto = input("Agregue el nombre del producto a añadir: ")
- cantidad = int(input("Agregue la cantidad del producto a añadir: "))
- valor_unitario = float(input("Agregue el valor unitario del producto a añadir: "))
+#Product data collection and processing cycle
+while start :
+
+  name_product = input("Add the name of the product you are going to sell: ")
+  
+  try:
+    quantity = int(input("Add the quantity of product you are going to sell: "))
+    unit_value = float(input("Add the unit price of the product you are going to sell: "))
+  except ValueError:
+      print("Error try again")
+      continue
+      
+
+  sales_register(name_product,quantity,unit_value,daily_sales)
  
- registro_ventas(nombre_producto,cantidad,valor_unitario,ventas_dia)
- 
- recaudo_diario = recaudo_diario + (cantidad*valor_unitario)
- continuar = input("desea continuar registrando ventas? si/no: ").lower()
-
-mostrar_resumen(ventas_dia)
-    
-print(f"El total recaudado en el dia fue ${recaudo_diario}")
+  daily_revenue = daily_revenue + (quantity*unit_value)
+  try:
+       switch = input("Do you want to continue recording sales? Yes/No: ").lower()
+       if switch != "yes":
+           start = False
+  except ValueError:
+      print("Error try again")
+      
+#Show the total sales revenue for the day
+print("\nSummary of the day \n-----------------------")
+show_summary(daily_sales)
+print(f"The total amount collected that day was: ${daily_revenue}")
         
